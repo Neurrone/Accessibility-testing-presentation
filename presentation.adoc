@@ -1,0 +1,88 @@
+# Accessibility Testing
+Dickson Tan
+2017-07-07
+
+## Agenda
+
+* What is accessibility testing?
+* Why do accessibility testing?
+** What are screen readers and how they work?
+* How to do accessibility testing?
+
+## What is Accessibility Testing?
+
+* Part of usability testing where users have **disabilities affecting how they use your website**
+* Testing  website works with assistive technology
+
+[NOTE.speaker]
+--
+Though I say website since most of you are doing web development, it generalizes to e.g desktop and mobile applications as well.
+--
+
+## Why Do Accessibility Testing?
+
+* Ensures your website is accessible - can be used by as many people as possible
+* Overlaps with other best practices e.g mobile web design, usability
+
+[NOTE.speaker]
+--
+Especially important for government services due to aging population.
+--
+
+## What is a screen reader?
+
+* Software that enables the blind to use computers independently
+* Demo
+* Examples:
+** link:https://www.nvaccess.org/[NVDA (NonVisual Desktop Access)] for Windows
+** link:https://www.apple.com/accessibility/mac/vision/[VoiceOver], built into  Mac and iOS
+** link:https://support.google.com/talkback/[TalkBack], built into Android
+
+## How do screen readers work?
+
+* Relies on applications providing info on  state of their UIs
+** For websites, that means using **semantics of html elements**
+* Provides additional keyboard commands for efficient navigation and information retrieval
+
+image:dom.gif[The DOM for a simple document. The root html node has 2 children: head and body. Head has a <title>my title</title> as its child. The body node has 2 children: <a href="...">my link</a> and <h1>my heading</h1>]
+
+## How to make websites accessible?
+
+* link:https://www.w3.org/WAI/intro/wcag.php[WCAG 2.0 standard] is used to formally  evaluate accessibility
+* Use link:http://webaim.org/techniques/semanticstructure/[**semantic HTML**]:
+** Use `<h1>, ..., <h6>` for headers, styling them with CSS
+** Use  `<table>` for tables
+** Associate labels with form controls with the `for` attribute
+
+[NOTE.speaker]
+--
+What does it mean for a website to be accessible? Mention WCAG without going into detail.
+Demonstrate every tip.
+Mention misuse of headings
+--
+
+## !
+
+* link:http://webaim.org/techniques/alttext/[Always include the alt attribute in images]
+* link:http://webaim.org/techniques/keyboard/[Make all functionality available through the keyboard]
+* Use native HTML5 controls when possible, and link:https://www.w3.org/WAI/intro/aria[WAI-ARIA] on custom UI widgets
+* link:http://accessibility.psu.edu/color/contrasthtml/[Provide sufficient color contrast], and don't use color alone to convey info
+* Use responsive design to optimize layout for various screen sizes
+
+## How to do accessibility testing?
+
+* Automated vs manual testing
+* Numerous automated linting tools like link:https://github.com/accesslint/accesslint.js[accesslint.js] can find issues such as:
+** Missing alt attribute in images
+** Insufficient color contrast
+** Duplicate IDs
+
+## Manual Testing
+
+* During development:
+** Browser add-ons like link:http://wave.webaim.org/extension/[WAVE]
+** link:https://learn.canvas.net/courses/1169/pages/tab-key-navigation-test[Tab key navigation test] and link:https://learn.canvas.net/courses/1169/pages/select-all-test[select all test]
+** Are pages readable when zoom is  >= 200%?
+* Screen reader testing:
+** Most common assistive technology used in testing
+** Difficult to learn
