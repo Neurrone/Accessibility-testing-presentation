@@ -1,2 +1,2 @@
-bundle exec asciidoctor-revealjs presentation.adoc
+bundle exec asciidoctor-revealjs --destination-dir docs presentation.adoc
 pause
