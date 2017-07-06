@@ -6,7 +6,8 @@ Dickson Tan
 
 * What is accessibility testing?
 * Why do accessibility testing?
-** What are screen readers and how they work?
+* What are screen readers and how they work?
+* How to make websites accessible?
 * How to do accessibility testing?
 
 ## What is Accessibility Testing?
@@ -32,6 +33,7 @@ Especially important for government services due to aging population.
 ## What is a screen reader?
 
 * Software that enables the blind to use computers independently
+* Provides additional keyboard commands for efficient navigation and information retrieval
 * Demo
 * Examples:
 ** link:https://www.nvaccess.org/[NVDA (NonVisual Desktop Access)] for Windows
@@ -42,7 +44,6 @@ Especially important for government services due to aging population.
 
 * Relies on applications providing info on  state of their UIs
 ** For websites, that means using **semantics of html elements**
-* Provides additional keyboard commands for efficient navigation and information retrieval
 
 image:dom.gif[The DOM for a simple document. The root html node has 2 children: head and body. Head has a <title>my title</title> as its child. The body node has 2 children: <a href="...">my link</a> and <h1>my heading</h1>]
 
@@ -52,20 +53,21 @@ image:dom.gif[The DOM for a simple document. The root html node has 2 children: 
 * Use link:http://webaim.org/techniques/semanticstructure/[**semantic HTML**]:
 ** Use `<h1>, ..., <h6>` for headers, styling them with CSS
 ** Use  `<table>` for tables
-** Associate labels with form controls with the `for` attribute
+** Associate `<label>` with form controls with the `for` attribute
 
 [NOTE.speaker]
 --
 What does it mean for a website to be accessible? Mention WCAG without going into detail.
-Demonstrate every tip.
+Demonstrate tips
 Mention misuse of headings
 --
 
 ## !
 
-* link:http://webaim.org/techniques/alttext/[Always include the alt attribute in images]
+* link:http://webaim.org/techniques/alttext/[Include `alt` attribute in images]
 * link:http://webaim.org/techniques/keyboard/[Make all functionality available through the keyboard]
-* Use native HTML5 controls when possible, and link:https://www.w3.org/WAI/intro/aria[WAI-ARIA] on custom UI widgets
+** Use `tabindex=0` to include element in tab navigation
+* Use native HTML5 controls when possible, and link:https://www.w3.org/WAI/intro/aria[ARIA] on custom UI widgets
 * link:http://accessibility.psu.edu/color/contrasthtml/[Provide sufficient color contrast], and don't use color alone to convey info
 * Use responsive design to optimize layout for various screen sizes
 
@@ -82,7 +84,27 @@ Mention misuse of headings
 * During development:
 ** Browser add-ons like link:http://wave.webaim.org/extension/[WAVE]
 ** link:https://learn.canvas.net/courses/1169/pages/tab-key-navigation-test[Tab key navigation test] and link:https://learn.canvas.net/courses/1169/pages/select-all-test[select all test]
-** Are pages readable when zoom is  >= 200%?
+** Are pages readable when zoom is  at least 200%?
 * Screen reader testing:
 ** Most common assistive technology used in testing
 ** Difficult to learn
+
+## Accessibility Testing
+
+*  accessibility testing:
+** Testing site is accessible for users with disabilities
+* What are screen readers and how they work?
+** Software that reads the screen. For websites, uses  DOM info.
+
+## !
+
+* How to make websites accessible?
+** Semantic HTML, native HTML controls and ARIA for custom ones, contrast, responsive design
+* How to do accessibility testing?
+** Automated tools, browser add-ons, keyboard & zoom tests, manual testing with screen readers and other assistive technologies
+
+## Additional reading
+
+* Either the link:https://learn.canvas.net/courses/1169[Professional Web Accessibility Auditing Made Easy] or link:http://courses.idrc.ocadu.ca/understandinga11y/[Understanding Web Accessibility (self-paced)] courses
+* link:https://www.w3.org/TR/WCAG20/[WCAG 2.0]: formal standard for web accessibility, authoritative reference
+* link:https://www.w3.org/WAI/intro/aria[ARIA] standard for making custom UI elements accessible. Also see this  link:http://whatsock.com/training/[concise introduction]
