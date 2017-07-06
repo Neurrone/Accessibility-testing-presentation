@@ -1,4 +1,4 @@
-# Accessibility Testing
+# Introduction to Web Accessibility and Accessibility Testing
 Dickson Tan
 2017-07-07
 
@@ -9,6 +9,7 @@ Dickson Tan
 * What are screen readers and how they work?
 * How to make websites accessible?
 * How to do accessibility testing?
+* Additional reading
 
 ## What is Accessibility Testing?
 
@@ -89,7 +90,7 @@ Mention misuse of headings
 ** Most common assistive technology used in testing
 ** Difficult to learn
 
-## Accessibility Testing
+## Summary
 
 *  accessibility testing:
 ** Testing site is accessible for users with disabilities
